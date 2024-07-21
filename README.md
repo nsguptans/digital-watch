@@ -1,4 +1,4 @@
- digital-watch
-this is my second repositary
-<bt/>
-my name is neha gupta
+DIGITAL CLOCK
+this is my second repositary<br/>
+i creted a project that digital clock 
+using of html,css,javascript
