@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+h1{
+    font-size:50px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+#main
+{
+    width:50%;
+ margin:auto;
+ margin-top:200px;
+    border:2px solid sienna;
+}
+#main:hover{
+    background-color: black;
+    color:sienna;
+    transition: 1s;
+}
+#menu
+{
+    color:black;
+            font-size:40px;
+            text-align: center;
+            margin-top:40px;
+            cursor:pointer;
+            transition: 2s;
+}
+
+    </style>
+</head>
+
+<body background="watch.jpeg"; style="background-repeat:no-repeat;background-size: cover;" onload="showtime()" >
+    <div id="menu" onmouseenter="modify()" onmouseleave="unmodify()">Digital clock</div>
+    <div id="main">
+    <h1></h1>
+    </div>
+
+</body >
+<script type="text/javascript">
+     function modify()
+    {
+        document.getElementById('menu').style.fontSize = "70px";
+        document.getElementById('menu').style.color = "sienna";
+    }
+    function unmodify()
+    {
+        document.getElementById('menu').style.fontSize = "40px"; 
+        document.getElementById('menu').style.color = "black";
+    }
+
+function showtime()
+{
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var session ="AM";
+    if(h>12){
+        h= h-12;
+    }
+    if(h>=12)
+    {
+        session = "PM";
+    }
+    h = h < 10 ? "0" +h : h;
+    m = m < 10 ? "0" +m : m;
+    s = s < 10 ? "0" +s : s;
+ var  time = h + " : " + m + " : "+ s + " "+ session;
+ document.getElementsByTagName('h1')[0].innerText = time;
+    setTimeout(showtime,1000);
+
+}
+
+</script>
+</html>
